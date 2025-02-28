@@ -26,7 +26,8 @@ spec:
         - name: manifest-data
           {{- if eq .Values.store "ConfigMap" }}
           configMap:
+            name: incluster-kubectl-apply-job
           {{- else }}
           secret:
+            secretName: incluster-kubectl-apply-job
           {{- end }}
-            name: incluster-kubectl-apply-job
