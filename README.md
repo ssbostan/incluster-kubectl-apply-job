@@ -1,2 +1,2 @@
 # incluster-kubectl-apply-job
-A way to apply Kubernetes manifests from within the cluster
+A Helm Chart to create Kubernetes Job to apply manifests using kubectl
