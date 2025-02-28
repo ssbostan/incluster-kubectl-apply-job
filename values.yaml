@@ -1,3 +1,9 @@
 roleType: ClusterRole
+#ClusterRole or Role
+
 roleName: cluster-admin
+
+store: Secret
+#Secret or ConfigMap
+
 manifest: "Your YAML manifest here. Use --set-file to use local file."

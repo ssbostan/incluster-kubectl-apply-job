@@ -24,5 +24,9 @@ spec:
               mountPath: /data
       volumes:
         - name: manifest-data
+          {{- if eq .Values.store "ConfigMap" }}
           configMap:
+          {{- else }}
+          secret:
+          {{- end }}
             name: incluster-kubectl-apply-job
