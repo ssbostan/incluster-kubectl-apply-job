@@ -1,0 +1,3 @@
+roleType: ClusterRole
+roleName: cluster-admin
+manifest: "Your YAML manifest here. Use --set-file to use local file."

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: incluster-kubectl-apply-job
+data:
+  manifest.yaml: |2
+    {{- .Values.manifest | nindent 4 }}

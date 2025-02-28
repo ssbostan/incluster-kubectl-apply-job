@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: incluster-kubectl-apply-job
+  namespace: {{ .Release.Namespace }}
+spec:
+  backoffLimit: 2
+  completions: 1
+  parallelism: 1
+  template:
+    spec:
+      restartPolicy: Never
+      serviceAccountName: incluster-kubectl-apply-job-sa
+      containers:
+        - name: kubectl
+          image: bitnami/kubectl:latest
+          command:
+            - kubectl
+            - apply
+            - -f
+            - /data/manifest.yaml
+          volumeMounts:
+            - name: manifest-data
+              mountPath: /data
+      volumes:
+        - name: manifest-data
+          configMap:
+            name: incluster-kubectl-apply-job

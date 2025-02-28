@@ -1,0 +1,9 @@
+apiVersion: v2
+name: incluster-kubectl-apply-job
+description: A Helm Chart to create Kubernetes Job to apply manifests using kubectl.
+type: application
+version: 0.0.1
+appVersion: 0.0.1
+maintainers:
+  - name: Saeid Bostandoust
+    email: ssbostan@yahoo.com
